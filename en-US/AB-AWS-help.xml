@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-ABAWSEC2Subnet</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>ABAWSEC2Subnet</command:noun>
+      <maml:description>
+        <maml:para>Returns brief information about the configured subnets for a connected aws account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This script is a wrapper for Get-EC2Subnet that includes the Name tag value.</maml:para>
+      <maml:para>This script assumes that you have already authenticated with AWS using Set-AWSCredential or Set-AWSRole (discussed below)</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-ABAWSEC2Subnet</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-ABAWSec2Subnet</dev:code>
+        <dev:remarks>
+          <maml:para>Name                        : SubnetState                 : available AssignIpv6AddressOnCreation : False AvailabilityZone            : us-east-1f AvailableIpAddressCount     : 4091 CidrBlock                   : 172.31.48.0/20 DefaultForAz                : True Ipv6CidrBlockAssociationSet : {} MapPublicIpOnLaunch         : True State                       : available SubnetId                    : subnet-7fd65d70 VpcId                       : vpc-3294a149 VpcName                     :</maml:para>
+          <maml:para>Name                        : 10.0.2.0 - us-east-1b - Private SubnetState                 : available AssignIpv6AddressOnCreation : False AvailabilityZone            : us-east-1b AvailableIpAddressCount     : 251 CidrBlock                   : 10.0.2.0/24 DefaultForAz                : False Ipv6CidrBlockAssociationSet : {} MapPublicIpOnLaunch         : False State                       : available SubnetId                    : subnet-05f714113d243cc8b VpcId                       : vpc-06233a13830bc67a3 VpcName                     : myAWSVPC ...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-ABAWSEC2vpc</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>ABAWSEC2vpc</command:noun>
+      <maml:description>
+        <maml:para>Returns brief information about the configured VPCs for a connected aws account.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This script is a wrapper for Get-EC2VPC that includes the Name tag value.</maml:para>
+      <maml:para>This script assumes that you have already authenticated with AWS using Set-AWSCredential or Set-AWSRole (discussed below)</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-ABAWSEC2vpc</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-ABAWSEC2Vpc</dev:code>
+        <dev:remarks>
+          <maml:para>Name            : CidrBlock       : 172.31.0.0/16 VpcId           : vpc-3294a149 DhcpOptionsId   : dopt-f0ad678b InstanceTenancy : default State           : available</maml:para>
+          <maml:para>Name            : myAWSVPC CidrBlock       : 10.0.0.0/16 VpcId           : vpc-06233a13830bc67a3 DhcpOptionsId   : dopt-f0ad678b InstanceTenancy : default State           : available
+...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-ABAWSInstance</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>ABAWSInstance</command:noun>
+      <maml:description>
+        <maml:para>Returns a list of running AWS instances.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This script will return a list of running AWS instances including the Name tag information.</maml:para>
+      <maml:para>This script assumes that you have already authenticated with AWS using Set-AWSCredential or Set-AWSRole (discussed below)</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-ABAWSInstance</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>PropertrySet</maml:name>
+          <maml:Description>
+            <maml:para>{{Fill PropertrySet Description}}</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>PropertrySet</maml:name>
+        <maml:Description>
+          <maml:para>{{Fill PropertrySet Description}}</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Get-ABAWSInstance</dev:code>
+        <dev:remarks>
+          <maml:para>...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Get-ABAWSNameTag</command:name>
+      <command:verb>Get</command:verb>
+      <command:noun>ABAWSNameTag</command:noun>
+      <maml:description>
+        <maml:para>Returns the Name tag value for a given AWS resource-id</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This script will get the Name tag value for a given AWS resource-id</maml:para>
+      <maml:para>This script assumes that you have already authenticated with AWS using Set-AWSCredential or Set-AWSRole (discussed below)</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-ABAWSNameTag</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>ResourceID</maml:name>
+          <maml:Description>
+            <maml:para>This is the name of the resource id to return the Name tag value for.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>ResourceID</maml:name>
+        <maml:Description>
+          <maml:para>This is the name of the resource id to return the Name tag value for.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>This example gets the VPC Name tag value for the VPC object with a</dev:code>
+        <dev:remarks>
+          <maml:para>vpcid of vpc-06233a13830bc67a3</maml:para>
+          <maml:para>PS&gt; Get-ABAWSNameTag -ResourceID vpc-06233a13830bc67a3 myAWSVPC</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-ABAWSEC2SecurityGroup</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>ABAWSEC2SecurityGroup</command:noun>
+      <maml:description>
+        <maml:para>Create a new EC2 Security Group with a preset list of rules.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This script will create a new EC2 Security Group with a preset list of inbound rules. The rules here are used as an example and would probably be overly permissive for use on non lab instances.</maml:para>
+      <maml:para>This script assumes that you have already authenticated with AWS using Set-AWSCredential or Set-AWSRole (discussed below)</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-ABAWSEC2SecurityGroup</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>VPCID</maml:name>
+          <maml:Description>
+            <maml:para>This is the VPCID to create the new Security group in.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+          <maml:name>GroupName</maml:name>
+          <maml:Description>
+            <maml:para>This is the name of the new Security Group.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+          <maml:name>Description</maml:name>
+          <maml:Description>
+            <maml:para>This is the description of the new Security Group.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>VPCID</maml:name>
+        <maml:Description>
+          <maml:para>This is the VPCID to create the new Security group in.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="2" aliases="none">
+        <maml:name>GroupName</maml:name>
+        <maml:Description>
+          <maml:para>This is the name of the new Security Group.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="3" aliases="none">
+        <maml:name>Description</maml:name>
+        <maml:Description>
+          <maml:para>This is the description of the new Security Group.</maml:para>
+        </maml:Description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>$props = @{</dev:code>
+        <dev:remarks>
+          <maml:para>'GroupName' = 'AD Member Server SG'     'Description' = 'Common com ports for Windows servers.'     'VpcID' = 'vpc-06233a13830bc67a3' } New-EC2SecurityGroup @props</maml:para>
+          <maml:para>sg-0737830ddb3ced801 ...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>New-ABAWSInstance</command:name>
+      <command:verb>New</command:verb>
+      <command:noun>ABAWSInstance</command:noun>
+      <maml:description>
+        <maml:para>Creates a new AWS instance.</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This script will create a new AWS instance.</maml:para>
+      <maml:para>This script assumes that you have already authenticated with AWS using Set-AWSCredential or Set-AWSRole (discussed below)</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-ABAWSInstance</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>New-ABAWSInstance</dev:code>
+        <dev:remarks>
+          <maml:para>...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Set-AWSRole</command:name>
+      <command:verb>Set</command:verb>
+      <command:noun>AWSRole</command:noun>
+      <maml:description>
+        <maml:para>Prompts a user from a list of available AWS Profiles as confiuged in SSO (PingFederate)</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>This client used PingFederate for SSO authentication to AWS.  AD groups were used to control AWS account access and role mapping.  This version works with PowerShell 5.1.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-AWSRole</maml:name>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters />
+    <command:inputTypes />
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>Author: Anthony Brown https://github.com/anthonyjamesbrown</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- EXAMPLE 1 --------------------------</maml:title>
+        <dev:code>Set-AWSRole</dev:code>
+        <dev:remarks>
+          <maml:para>...</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>
